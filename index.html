@@ -85,6 +85,33 @@
     box-shadow:0 18px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(18,41,74,.06);
   }
 
+  .business-card{
+    position:absolute; top:30px; left:50%; transform:translateX(-50%);
+    width:270px; z-index:3;
+    background:var(--paper-edge);
+    border:1px solid var(--line);
+    box-shadow:0 16px 28px rgba(0,0,0,.3);
+    padding:18px 18px 16px;
+    display:flex; gap:14px; align-items:center;
+  }
+  @media (max-width:520px){ .business-card{ width:86%; max-width:260px; padding:14px 14px 13px; gap:11px; } }
+  .bc-photo{
+    width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:1px solid var(--teal-deep); background:var(--paper); display:block;
+  }
+  .bc-fallback{
+    display:none; width:64px; height:64px; border-radius:50%; flex-shrink:0;
+    background:var(--teal-deep); color:var(--paper); align-items:center; justify-content:center;
+    font-family:var(--font-serif); font-weight:700; font-size:1.05rem;
+  }
+  @media (max-width:520px){ .bc-photo, .bc-fallback{ width:52px; height:52px; } }
+  .bc-name{ font-family:var(--font-serif); font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:5px; }
+  .bc-row{
+    display:flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:.72rem; color:var(--ink-dim); margin-top:3px;
+  }
+  .bc-row .tag{ font-weight:700; color:var(--teal-deep); width:38px; flex-shrink:0; }
+
   .eyebrow{
     font-family:var(--font-mono); font-size:.7rem; letter-spacing:.14em;
     text-transform:uppercase; color:var(--ink-dim);
@@ -110,7 +137,8 @@
   h2.section-title::before{ content:"↗"; color:var(--teal-deep); font-size:1.05rem; }
 
   /* ---------- hero ---------- */
-  .hero{ padding-top:42px; text-align:center; }
+  .hero{ padding-top:190px; text-align:center; }
+  @media (max-width:520px){ .hero{ padding-top:170px; } }
   .corner-row{
     display:flex; justify-content:space-between;
     font-family:var(--font-mono); font-size:.68rem; letter-spacing:.14em;
@@ -261,6 +289,18 @@
 
 <div class="clipboard">
   <div class="clip"><div class="top"></div><div class="bottom"></div><div class="rivet"></div></div>
+
+  <div class="business-card">
+    <img class="bc-photo" src="profile.jpg" alt="Jinsol Choi"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="bc-fallback">JC</div>
+    <div>
+      <div class="bc-name">Jinsol Choi</div>
+      <div class="bc-row"><span class="tag">IG</span>@jinsollosnij</div>
+      <div class="bc-row"><span class="tag">EMAIL</span>jinsolchoi@outlook.com</div>
+      <div class="bc-row"><span class="tag">TEL</span>+1 778 778 7780</div>
+    </div>
+  </div>
 
   <div class="paper">
 
@@ -452,7 +492,7 @@
         <h2>Let's work together</h2>
         <p>[A short line on how you'd like to be contacted — e.g. reach out by email and I'll reply within 24 hours.]</p>
         <div class="contact-links">
-          <a href="mailto:your@email.com">EMAIL — your@email.com</a>
+          <a href="mailto:jinsolchoi@outlook.com">EMAIL — jinsolchoi@outlook.com</a>
           <a href="https://vimeo.com/yourprofile" target="_blank" rel="noopener">VIMEO</a>
           <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">INSTAGRAM</a>
           <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LINKEDIN</a>
